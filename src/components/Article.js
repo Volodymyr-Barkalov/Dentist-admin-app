@@ -1,32 +1,6 @@
 import React, {PureComponent} from 'react';
 
 class Article extends PureComponent {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            count: 0
-        }
-
-    }
-    //
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     return this.state.isOpen !== nextState.isOpen
-    // }
-
-    componentWillMount() {
-        console.log('---', 'mounting')
-    }
-
-    // componentWillReceiveProps(nextProps) {
-    //     if(nextProps.defaultOpen !== this.props.defaultOpen) {
-    //         this.setState({isOpen: nextProps.defaultOpen})
-    //     }
-    // }
-
-    componentWillUpdate() {
-        console.log('---', 'will update')
-    }
 
     render() {
         const { article, isOpen } = this.props
@@ -49,11 +23,6 @@ class Article extends PureComponent {
         );
     }
 
-    handleClick = () => {
-        // this.setState({
-        //     isOpen: !this.state.isOpen
-        // })
-    }
 }
 
 export default Article
