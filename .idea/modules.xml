@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/dentist-admin-app.iml" filepath="$PROJECT_DIR$/.idea/dentist-admin-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dentistappjava/dentistappjava.iml" filepath="$PROJECT_DIR$/dentistappjava/dentistappjava.iml" />
     </modules>
   </component>
 </project>
