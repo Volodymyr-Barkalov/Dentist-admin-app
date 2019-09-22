@@ -33,9 +33,11 @@ public class Form43 {
     // Todo Change gender to enum
     private String gender;
 
+    private String birthday;
+
     private String address;
 
-    private String phoneNumber;
+    private String phone;
 
     private String diagnosis;
 
@@ -44,5 +46,7 @@ public class Form43 {
     private String lastDisease;
 
     private String presentDisease;
+
+    private String complaints;
 
 }
