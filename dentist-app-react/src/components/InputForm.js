@@ -49,7 +49,8 @@ class InputForm extends Component {
             lastDisease: this.state.lastDisease,
             disease: this.state.disease
         };
-        console.log(newForm);
+        // console.log(newForm);
+        this.props.addForm(newForm, this.props.history);
     }
 
     render() {
@@ -170,4 +171,13 @@ class InputForm extends Component {
     }
 }
 
-export default InputForm
+InputForm.propTypes = {
+    addForm : PropTypes.func.isRequired,
+    errors : PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    errors: state.errors
+})
+
+export default connect(mapStateToProps, {addForm} ) (InputForm);
