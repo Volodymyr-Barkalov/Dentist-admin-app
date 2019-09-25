@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputForm from './components/InputForm';
+import Welcome from './components/Welcome';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
@@ -12,14 +13,8 @@ class App extends Component {
 
             <Provider store={store}>
                 <Router>
-                    <div className="container">
-                        <div className="jumbotron">
-                            <h3 className="display-3">
-                                Форма 043/о
-                            </h3>
-                        </div>
-                        <Route exact path="/" component={InputForm} />
-                    </div>
+                    <Route exact path="/" component={InputForm} />
+                    <Route exact path="/welcome" component={Welcome} />
                 </Router>
             </Provider>
 
