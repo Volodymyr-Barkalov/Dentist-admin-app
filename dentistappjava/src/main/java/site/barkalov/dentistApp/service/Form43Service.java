@@ -5,6 +5,10 @@ import org.springframework.stereotype.Service;
 import site.barkalov.dentistApp.domain.Form43;
 import site.barkalov.dentistApp.repository.Form43Repository;
 
+import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class Form43Service {
 
@@ -16,8 +20,10 @@ public class Form43Service {
         return form43Repository.save(form43);
     }
 
-    public Iterable<Form43> findAll() {
-        return form43Repository.findAll();
+    public List<Form43> findAll() {
+        List<Form43> list = new ArrayList<>();
+        form43Repository.findAll().forEach(list::add);
+        return list;
     }
 
     public Form43 findById(Long id) {
@@ -28,4 +34,9 @@ public class Form43Service {
         Form43 projectTask = findById(id);
         form43Repository.delete(projectTask);
     }
+
+    public ByteArrayInputStream generatePdf(Integer id) {
+        return GeneratePdfReport.getPdfForm(form43Repository.getById(Long.valueOf(id)));
+    }
+
 }

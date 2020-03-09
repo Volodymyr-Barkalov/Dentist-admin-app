@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { addForm } from "../actions/formActions";
-import classnames from "classnames";
-import HeaderInputForm from "./HeaderInputForm";
+import {connect} from "react-redux";
+import {addForm} from "../../actions/formActions";
+import HeaderInputForm from "../HeaderInputForm";
+import CustomNavbar from "../navbar/CustomNavbar";
 
 class InputForm extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             sickNumberId: "",
             year: "",
@@ -55,10 +55,11 @@ class InputForm extends Component {
     }
 
     render() {
-        var date = new Date();
+        const date = new Date();
         return (
             <div className="container">
-                <HeaderInputForm></HeaderInputForm>
+                <CustomNavbar/>
+                <HeaderInputForm/>
                 <div className="inputForm">
                     <form onSubmit={this.onSubmit}>
                         <div className="form-row">
@@ -139,7 +140,7 @@ class InputForm extends Component {
                             <textarea className="form-control" name="diagnosis"
                                 value={this.state.diagnosis}
                                 onChange={this.onChange}
-                                rows="3"></textarea>
+                                rows="3"/>
                         </div>
 
                         <div className="form-group">
@@ -147,7 +148,7 @@ class InputForm extends Component {
                             <textarea className="form-control" name="complaints"
                                 value={this.state.complaints}
                                 onChange={this.onChange}
-                                rows="3"></textarea>
+                                rows="3"/>
                         </div>
 
                         <div className="form-group">
@@ -155,7 +156,7 @@ class InputForm extends Component {
                             <textarea className="form-control" name="lastDisease"
                                 value={this.state.lastDisease}
                                 onChange={this.onChange}
-                                rows="3"></textarea>
+                                rows="3"/>
                         </div>
 
                         <div className="form-group">
@@ -163,7 +164,7 @@ class InputForm extends Component {
                             <textarea className="form-control" name="disease"
                                 value={this.state.disease}
                                 onChange={this.onChange}
-                                rows="3"></textarea>
+                                rows="3"/>
                         </div>
 
                         <button type="submit" className="btn btn-primary">Submit</button>
@@ -178,10 +179,10 @@ class InputForm extends Component {
 InputForm.propTypes = {
     addForm: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
-}
+};
 
 const mapStateToProps = state => ({
     errors: state.errors
-})
+});
 
 export default connect(mapStateToProps, { addForm })(InputForm);

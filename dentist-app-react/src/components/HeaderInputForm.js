@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class HeaderInputForm extends Component {
     render() {
         return (
                 <div className="jumbotron">
-                   <h3 className="display-3">
+                   <h3 className="display-4">
                         Форма 043/о
                    </h3>
                 </div>
@@ -12,4 +12,4 @@ class HeaderInputForm extends Component {
     }
 }
 
-export default HeaderInputForm
+export default HeaderInputForm;
