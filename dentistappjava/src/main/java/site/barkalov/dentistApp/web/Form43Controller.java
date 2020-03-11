@@ -56,7 +56,7 @@ public class Form43Controller {
     public ResponseEntity<InputStreamResource> getPdfForm(@PathVariable("id") Integer formId) {
         ByteArrayInputStream bis = form43Service.generatePdf(formId);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=form43.pdf");
+        headers.add("Content-Disposition", "attachment; filename=form43.pdf");
 
         return ResponseEntity
                 .ok()

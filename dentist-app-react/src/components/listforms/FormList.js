@@ -37,30 +37,21 @@ class FormList extends React.Component {
     getPDF(id) {
         const url = "/form/" + id + "/pdf";
         const {apiData} = this.state;
-        // axios.get(url)
-        //     .then(function (response) {
-        //         // handle success
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         // handle error
-        //         console.log(error);
-        //     });
         fetch(url, {
             method: "GET",
             headers: {
                 "Content-Type": "application/pdf"
-            }
+            },
         })
             .then(res => res.blob())
             .then(response => {
                 //Create a Blob from the PDF Stream
                 console.log(response);
-                const file = new Blob([response], {
+                const blob = new Blob([response], {
                     type: "application/pdf"
                 });
                 //Build a URL from the file
-                const fileURL = URL.createObjectURL(file);
+                const fileURL = URL.createObjectURL(blob);
                 const tab = window.open();
                 tab.location.href = fileURL;
 
@@ -87,12 +78,10 @@ class FormList extends React.Component {
                         <td>{lastName}</td>
                         <td>
                             <div id="browse_app">
-                                <button className="btn btn-large btn-info" type="button" onClick={this.getPDF(id)} >
+                                <button className="btn btn-large btn-info" type="button" onClick={() => this.getPDF(id)}
+                                formTarget="_blank">
                                     Download PDF
                                 </button>
-                                {/*<Link to={"/form/" + id + "/pdf"} className="btn btn-primary">*/}
-                                {/*    Download PDF*/}
-                                {/*</Link>*/}
                             </div>
                         </td>
                     </tr>
