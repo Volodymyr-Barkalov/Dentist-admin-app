@@ -15,7 +15,8 @@ class FormList extends React.Component {
     }
 
     componentDidMount() {
-        const statisticApiURL = window.location.hostname + "/form/all";
+        // const statisticApiURL = "https://dentist-form-app.herokuapp.com/form/all";
+        const statisticApiURL = `${window.location.hostname}/form/all`;
         console.log('Fetching data from resource: ' + statisticApiURL);
 
         fetch(statisticApiURL)
@@ -35,7 +36,8 @@ class FormList extends React.Component {
     }
 
     getPDF(id) {
-        const url = "/form/" + id + "/pdf";
+        // const url = "/form/" + id + "/pdf";
+        const url = `${window.location.hostname}/form/${id}/pdf`;
         const {apiData} = this.state;
         fetch(url, {
             method: "GET",
