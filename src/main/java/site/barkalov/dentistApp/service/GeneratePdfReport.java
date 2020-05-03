@@ -112,7 +112,7 @@ public class GeneratePdfReport {
             Paragraph p3 = new Paragraph(30, " 5. Діагноз: " + form43.getDiagnosis() + "\n" +
                     " 6. Скарги: " + form43.getComplaints() + "\n"
                     + " 7. Перенесені та супутні захворювання: " + form43.getLastDisease() + "\n"
-                    + " 8. Розвиток теперішнього захворювання: " + form43.getPresentDisease() + "\n\n"
+                    + " 8. Розвиток теперішнього захворювання: " + form43.getDisease() + "\n\n"
                     , font);
             PdfPCell cell3 = new PdfPCell();
             cell3.addElement(p3);
