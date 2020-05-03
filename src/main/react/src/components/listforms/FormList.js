@@ -15,7 +15,7 @@ class FormList extends React.Component {
     }
 
     componentDidMount() {
-        const statisticApiURL = this.state.apiPath + "/form/all";
+        const statisticApiURL = "/form/all";
         console.log('Fetching data from resource: ' + statisticApiURL);
 
         fetch(statisticApiURL)
