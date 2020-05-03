@@ -1,5 +1,6 @@
 package site.barkalov.dentistApp.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import java.util.Map;
 @CrossOrigin(origins = "*")
 public class Form43Controller {
 
+    @Autowired
     private final Form43Service form43Service;
 
     public Form43Controller(Form43Service form43Service) {
