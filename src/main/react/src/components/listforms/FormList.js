@@ -6,7 +6,7 @@ class FormList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            apiPath: 'http://localhost:8080',
+            apiPath: 'https://dentist-form-app.herokuapp.com/',
             apiData: [],
             filteredApiData: [],
             wasFetched: false,
@@ -15,7 +15,7 @@ class FormList extends React.Component {
     }
 
     componentDidMount() {
-        const statisticApiURL = "/form/all";
+        const statisticApiURL = window.location.hostname + "/form/all";
         console.log('Fetching data from resource: ' + statisticApiURL);
 
         fetch(statisticApiURL)
