@@ -30,7 +30,6 @@ public class Form43 {
     private String firstName;
     private String patronymic;
 
-    // Todo Change gender to enum
     private String gender;
 
     private String birthday;

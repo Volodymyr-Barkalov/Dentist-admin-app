@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Nav, Navbar} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 
 class CustomNavbar extends Component {
 
@@ -8,8 +9,8 @@ class CustomNavbar extends Component {
        return <Navbar bg="primary" variant="dark">
             <Navbar.Brand href="/">Navbar</Navbar.Brand>
             <Nav className="mr-auto">
-                <Nav.Link href="/form/add">New form</Nav.Link>
-                <Nav.Link href="/form/all">List all forms</Nav.Link>
+                <Link to="/form/add" className="nav-link">New form</Link>
+                <Link to="/form/all" className="nav-link">List all forms</Link>
             </Nav>
         </Navbar>
     }
