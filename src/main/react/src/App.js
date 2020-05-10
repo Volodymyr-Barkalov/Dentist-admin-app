@@ -16,7 +16,7 @@ class App extends Component {
                 <Router>
                     <Route exact path="/form/add" component={InputForm} />
                     <Route exact path="/" component={Welcome} />
-                    <Route exact path="/form/all" component={FormList} />
+                    <Route exact path="/form/showall" component={FormList} />
                 </Router>
             </Provider>
 
