@@ -6,7 +6,8 @@ class FormList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            apiPath: 'https://dentist-form-app.herokuapp.com/',
+            apiPath: 'https://dentist-form-app.herokuapp.com/api',
+            // apiPath: 'http://localhost:8080/api/',
             apiData: [],
             filteredApiData: [],
             wasFetched: false,
