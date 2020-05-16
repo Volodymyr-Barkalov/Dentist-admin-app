@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/form")
+@RequestMapping("/api/form")
 @CrossOrigin(origins = "*")
 public class Form43Controller {
 
